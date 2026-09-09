@@ -1,0 +1,265 @@
+@import "tailwindcss";
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   CyKemet.com Design System — Tailwind v4 Theme
+   Source of truth: Figma "Design system" page
+───────────────────────────────────────────────────────────────────────────── */
+
+@theme {
+
+  /* ─── Fonts ──────────────────────────────────────────────────────────────── */
+  --font-sans:    var(--font-jakarta), sans-serif;
+  --font-arabic:  var(--font-cairo), sans-serif;
+  --font-logo:    var(--font-righteous), sans-serif;
+  --font-zcool:    var(--font-zcool-qingke), sans-serif;
+
+  /* ─── Auth UI ────────────────────────────────────────────────────────────── */
+  --color-auth-left-bg:  #f7f7f7;
+  --color-dot-active:    #132958;
+  --color-dot-inactive:  #e7e7e7;
+
+  /* ─── Primary — #003BDF ─────────────────────────────────────────────────── */
+  --color-primary-50:  #e5ecff;
+  --color-primary-100: #ccdaff;
+  --color-primary-200: #99b4ff;
+  --color-primary-300: #668fff;
+  --color-primary-400: #3369ff;
+  --color-primary-500: #003bdf;
+  --color-primary-600: #0036cc;
+  --color-primary-700: #002999;
+  --color-primary-800: #001b66;
+  --color-primary-900: #000e33;
+  --color-primary-950: #00071a;
+
+  /* ─── Secondary — #E9F4FC ───────────────────────────────────────────────── */
+  --color-secondary-50:  #e9f4fc;
+  --color-secondary-100: #d2e9f9;
+  --color-secondary-200: #a5d2f3;
+  --color-secondary-300: #78bced;
+  --color-secondary-400: #4ba6e7;
+  --color-secondary-500: #e9f4fc;
+  --color-secondary-600: #1873b4;
+  --color-secondary-700: #125687;
+  --color-secondary-800: #0c395a;
+  --color-secondary-900: #061d2d;
+  --color-secondary-950: #030e16;
+
+  /* ─── Background — #D3E9F8 ──────────────────────────────────────────────── */
+  --color-bg-50:  #e9f4fb;
+  --color-bg-100: #d3e9f8;
+  --color-bg-200: #a7d3f1;
+  --color-bg-300: #7bbeea;
+  --color-bg-400: #4fa8e3;
+  --color-bg-500: #d3e9f8;
+  --color-bg-600: #1c75b0;
+  --color-bg-700: #155884;
+  --color-bg-800: #0e3a58;
+  --color-bg-900: #071d2c;
+  --color-bg-950: #040f16;
+
+  /* Semantic background (dark mode) */
+  --color-bg-page:     #040f16;
+  --color-bg-card:     #071d2c;
+  --color-bg-surface:  #0e3a58;
+  --color-bg-elevated: #155884;
+  --color-bg-border:   #1c75b0;
+
+  /* ─── Error — #F43F5D ───────────────────────────────────────────────────── */
+  --color-error-50:  #fee7eb;
+  --color-error-100: #fccfd6;
+  --color-error-200: #f99fae;
+  --color-error-300: #f76e85;
+  --color-error-400: #f43e5c;
+  --color-error-500: #f43f5d;
+  --color-error-600: #c10b29;
+  --color-error-700: #91081f;
+  --color-error-800: #600615;
+  --color-error-900: #30030a;
+  --color-error-950: #180105;
+
+  /* ─── Success — #4ADE80 ─────────────────────────────────────────────────── */
+  --color-success-50:  #e9fbf0;
+  --color-success-100: #d4f7e1;
+  --color-success-200: #a9efc3;
+  --color-success-300: #7ee7a4;
+  --color-success-400: #52e086;
+  --color-success-500: #4ade80;
+  --color-success-600: #1fad53;
+  --color-success-700: #18813e;
+  --color-success-800: #10562a;
+  --color-success-900: #082b15;
+  --color-success-950: #04160a;
+
+  /* ─── Warning — #FBBE24 ─────────────────────────────────────────────────── */
+  --color-warning-50:  #fff8e6;
+  --color-warning-100: #fef0cd;
+  --color-warning-200: #fde19b;
+  --color-warning-300: #fcd269;
+  --color-warning-400: #fbc437;
+  --color-warning-500: #fbbe24;
+  --color-warning-600: #c89104;
+  --color-warning-700: #966c03;
+  --color-warning-800: #644802;
+  --color-warning-900: #322401;
+  --color-warning-950: #191200;
+
+  /* ─── Content / Text — #1C1D1D ──────────────────────────────────────────── */
+  --color-content-50:  #f2f2f2;
+  --color-content-100: #e5e6e6;
+  --color-content-200: #cbcdcd;
+  --color-content-300: #b1b4b4;
+  --color-content-400: #979b9b;
+  --color-content-500: #1c1d1d;
+  --color-content-600: #646868;
+  --color-content-700: #4b4e4e;
+  --color-content-800: #323434;
+  --color-content-900: #191a1a;
+  --color-content-950: #0d0d0d;
+
+  /* ─── Palette ────────────────────────────────────────────────────────────── */
+  --color-grey-registration: #6d6d6d;
+  --color-grey-main:         #85a0b2;
+
+  /* ─── Severity ───────────────────────────────────────────────────────────── */
+  --color-severity-critical:      #f43f5d;
+  --color-severity-high:          #ff7104;
+  --color-severity-medium:        #fbbe24;
+  --color-severity-low:           #003bdf;
+  --color-severity-informational: #85a0b2;
+
+  /* ─── Typography ─────────────────────────────────────────────────────────── */
+  /* Uses --text-* namespace so Tailwind v4 auto-generates text-{name} classes  */
+  /* Companion vars --text-*--line-height and --text-*--letter-spacing are      */
+  /* applied automatically when the utility class is used. No @layer needed.    */
+
+  --text-title-1: 64px;
+  --text-title-1--line-height:    70px;
+  --text-title-1--letter-spacing: -0.4px;
+
+  --text-title-2: 40px;
+  --text-title-2--line-height:    48px;
+  --text-title-2--letter-spacing: -0.4px;
+
+  --text-title-3: 32px;
+  --text-title-3--line-height:    36px;
+  --text-title-3--letter-spacing: -0.4px;
+
+  --text-h1: 28px;
+  --text-h1--line-height:    36px;
+  --text-h1--letter-spacing: -0.4px;
+
+  --text-h2: 26px;
+  --text-h2--line-height:    30px;
+  --text-h2--letter-spacing: -0.4px;
+
+  --text-h3: 24px;
+  --text-h3--line-height:    28px;
+  --text-h3--letter-spacing: -0.4px;
+
+  --text-h4: 20px;
+  --text-h4--line-height:    24px;
+  --text-h4--letter-spacing: -0.4px;
+
+  --text-h5: 18px;
+  --text-h5--line-height:    24px;
+  --text-h5--letter-spacing: -0.4px;
+
+  --text-body-lg: 16px;
+  --text-body-lg--line-height:    22px;
+  --text-body-lg--letter-spacing: -0.4px;
+
+  --text-body-md: 14px;
+  --text-body-md--line-height:    20px;
+  --text-body-md--letter-spacing: -0.4px;
+
+  --text-body-sm: 12px;
+  --text-body-sm--line-height:    16px;
+  --text-body-sm--letter-spacing: -0.4px;
+
+  --text-label-lg: 17px;
+  --text-label-lg--line-height:    20px;
+  --text-label-lg--letter-spacing: -0.4px;
+
+  --text-label-md: 15px;
+  --text-label-md--line-height:    18px;
+  --text-label-md--letter-spacing: -0.4px;
+
+  --text-label-sm: 13px;
+  --text-label-sm--line-height:    16px;
+  --text-label-sm--letter-spacing: -0.4px;
+
+  --text-label-xs: 12px;
+  --text-label-xs--line-height:    14px;
+  --text-label-xs--letter-spacing: -0.4px;
+
+  --text-label-2xs: 11px;
+  --text-label-2xs--line-height:    14px;
+  --text-label-2xs--letter-spacing: -0.4px;
+
+  /* ─── Border Radius ──────────────────────────────────────────────────────── */
+  --radius-card:  12px;
+  --radius-btn:    8px;
+  --radius-input:  8px;
+  --radius-badge:  6px;
+  --radius-modal: 16px;
+  --radius-chip:  20px;
+  --radius-full:  9999px;
+
+  /* ─── Shadows ────────────────────────────────────────────────────────────── */
+  --shadow-card:     0 4px 24px 0 rgb(0 0 0 / 0.32);
+  --shadow-modal:    0 8px 40px 0 rgb(0 0 0 / 0.48);
+  --shadow-dropdown: 0 4px 16px 0 rgb(0 0 0 / 0.24);
+  --shadow-btn:      0 2px  8px 0 rgb(0 59 223 / 0.24);
+
+  /* ─── Layout ─────────────────────────────────────────────────────────────── */
+  --spacing-sidebar: 240px;
+  --spacing-topbar:   64px;
+
+}
+
+/* ─── Base Styles ────────────────────────────────────────────────────────────── */
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html[lang="ar"],
+  [dir="rtl"] {
+    font-family: var(--font-arabic);
+  }
+
+  body {
+    background-color: var(--color-bg-page);
+    color: var(--color-content-500);
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  .font-righteous {
+    font-family: var(--font-logo);
+  }
+
+  /* ─── Markdown preview ───────────────────────────────────────────────────── */
+  .markdownPreview h1 { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; color: #1c1d1d; }
+  .markdownPreview h2 { font-size: 1.25rem; font-weight: 600; margin-bottom: 0.4rem; color: #1c1d1d; }
+  .markdownPreview h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.3rem; color: #1c1d1d; }
+  .markdownPreview p  { font-size: 1rem; line-height: 1.6; margin-bottom: 0.75rem; color: #1c1d1d; }
+  .markdownPreview ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 0.75rem; }
+  .markdownPreview ol { list-style-type: decimal; padding-left: 1.5rem; margin-bottom: 0.75rem; }
+  .markdownPreview li { font-size: 1rem; line-height: 1.6; color: #1c1d1d; margin-bottom: 0.25rem; }
+  .markdownPreview a  { color: #003bdf; text-decoration: underline; }
+  .markdownPreview strong { font-weight: 700; }
+  .markdownPreview em     { font-style: italic; }
+  .markdownPreview code   { font-family: monospace; background: #f0f4ff; border-radius: 4px; padding: 0.1rem 0.3rem; font-size: 0.875rem; color: #003bdf; }
+  .markdownPreview pre    { background: #1c1d1d; border-radius: 8px; padding: 1rem; margin-bottom: 0.75rem; overflow-x: auto; }
+  .markdownPreview pre code { background: transparent; color: #e9f4fc; padding: 0; border-radius: 0; }
+  .markdownPreview blockquote { border-left: 3px solid #003bdf; padding-left: 1rem; margin-bottom: 0.75rem; color: #85a0b2; font-style: italic; }
+  .markdownPreview hr { border: none; border-top: 1px solid #e5e5e5; margin: 1rem 0; }
+}
